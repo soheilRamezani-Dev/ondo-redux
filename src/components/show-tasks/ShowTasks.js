@@ -1,3 +1,5 @@
+import Task from "./Task";
+
 const ShowTasks = () => {
     return <div className="col-lg-8">
         <table className="table">
@@ -11,20 +13,8 @@ const ShowTasks = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr className="alert alert-success">
-                    <td>1</td>
-                    <td>go to home</td>
-                    <td>21/5/1401</td>
-                    <td>completed</td>
-                    <td>no actions yet</td>
-                </tr>
-                <tr className="alert alert-danger">
-                    <td>2</td>
-                    <td>study</td>
-                    <td>21/5/1401</td>
-                    <td>not-completed</td>
-                    <td>no actions yet</td>
-                </tr>
+                <Task situation="completed" id='1'title="go to home" date="21/5/1401"/>
+                <Task situation="not-completed" id='2'title="study" date="21/5/1401"/>
             </tbody>
         </table>
     </div>

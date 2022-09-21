@@ -1,8 +1,8 @@
 const FormInput = ({id,type,title,formText}) => {
-    return <div class="mb-3">
-    <label htmlFor={id} class="form-label">{title}</label>
-    <input type={type} class="form-control" id={id}/>
-    <div class="form-text">{formText}</div>
+    return <div className="mb-3">
+    <label htmlFor={id} className="form-label">{title}</label>
+    <input type={type} className="form-control" id={id}/>
+    <div className="form-text">{formText}</div>
 </div>
 }
  

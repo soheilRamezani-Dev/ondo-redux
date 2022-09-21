@@ -6,7 +6,7 @@ const AddDoForm = () => {
         <form className="form">
             <FormInput id="title" type="text" title="Task title" formText="type english" />
             <FormInput id="date" type="date" title="select date" formText="select date" />
-            <button type="submit" class="btn btn-primary">Add Task</button>
+            <button type="submit" className="btn btn-primary">Add Task</button>
         </form>
     </div>
 }

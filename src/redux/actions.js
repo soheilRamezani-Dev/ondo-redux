@@ -9,7 +9,7 @@ export const fetchTasks = ()=> {
 }
 
 const updateTasks =(response) =>{
-    const data = response.slice(0,20).sort((a,b)=>a.completed-b.completed);
+    const data = response.slice(0,20);
     return{
         type: actionsName.GET_SUCCESS,
         payload: {
@@ -24,6 +24,24 @@ export const addTaskAction = (title , date) => {
         payload: {
             taskTitle : title,
             taskDate : date,
+        }
+    }
+}
+
+export const deleteTaskAction = (id)=> {
+    return {
+        type: actionsName.DELETE_TASK,
+        payload: {
+            taskId: id,
+        }
+    }
+}
+
+export const checkTaskAction = (id) => {
+    return {
+        type:  actionsName.CHECK_TASK,
+        payload : {
+            taskId : id,
         }
     }
 }

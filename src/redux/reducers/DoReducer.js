@@ -22,6 +22,22 @@ const DoReducer = (state = initialState, action) => {
         ],
         isLoading: false,
       };
+    case actionsName.DELETE_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.filter((val) => val.id !== action.payload.taskId),
+      };
+    case actionsName.CHECK_TASK:
+      const id = state.tasks.findIndex(
+        (val) => action.payload.taskId === val.id
+      );
+      let newTasks = [...state.tasks];
+      newTasks[id].completed = true;
+
+      return {
+        tasks: [...newTasks],
+        isLoading: false,
+      };
     default:
       return state;
   }

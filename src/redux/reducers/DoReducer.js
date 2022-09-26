@@ -33,6 +33,7 @@ const DoReducer = (state = initialState, action) => {
       );
       let newTasks = [...state.tasks];
       newTasks[id].completed = true;
+      newTasks.sort((a,b)=>a.id==action.payload.taskId?-1 : b.id==action.payload.taskId?1:0)
 
       return {
         tasks: [...newTasks],

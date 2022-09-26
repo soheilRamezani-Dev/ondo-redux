@@ -24,7 +24,9 @@ const ShowTasks = () => {
           </tr>
         </thead>
         <tbody>
-            {tasks.map((val)=>{
+          {console.log(tasks)}
+            {
+            tasks.map((val)=>{
                 return <Task key={val.id}
                 situation={val.completed}
                 id={val.id}

@@ -9,10 +9,21 @@ export const fetchTasks = ()=> {
 }
 
 const updateTasks =(response) =>{
+    const data = response.slice(0,20).sort((a,b)=>a.completed-b.completed);
     return{
         type: actionsName.GET_SUCCESS,
         payload: {
-            tasks: response
+            tasks: data
+        }
+    }
+}
+
+export const addTaskAction = (title , date) => {
+    return {
+        type: actionsName.ADD_TASK,
+        payload: {
+            taskTitle : title,
+            taskDate : date,
         }
     }
 }

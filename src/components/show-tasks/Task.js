@@ -1,4 +1,3 @@
-import "./task.css";
 import {FaCheck,FaTimes} from 'react-icons/fa'
 const Task = ({ situation, id, title, date }) => {
   return (

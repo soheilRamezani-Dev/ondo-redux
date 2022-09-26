@@ -8,7 +8,9 @@ const ShowTasks = () => {
   useEffect(() => {
     dispatch(fetchTasks());
   }, []);
-  const tasks = useSelector((state) => state.tasks);
+  let tasks = useSelector((state) => state.tasks);
+  tasks= tasks.slice(0,20).sort((a,b)=>a.completed-b.completed);
+
 
   const dispatch = useDispatch();
   return (
@@ -24,7 +26,6 @@ const ShowTasks = () => {
           </tr>
         </thead>
         <tbody>
-          {console.log(tasks)}
             {
             tasks.map((val)=>{
                 return <Task key={val.id}
